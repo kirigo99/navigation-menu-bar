@@ -1,0 +1,126 @@
+* { 
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+ }
+
+body{
+ font-family: 'Quicksand', sans-serif;
+ }
+
+ nav {
+     display: flex;/*side by side*/
+    background-color:rgb(0, 0, 10);
+     min-height: 8vh;
+     width: 100%;
+ }
+
+ .logo{
+     color: rgb(71, 255, 111);
+     text-transform: uppercase;
+     line-height: 90px;
+     padding: 0 100px;
+     font-size: 20px;
+     letter-spacing: 4px;
+ }
+
+nav ul {
+    margin-left: auto;/*child element to the right of the parent*/
+    margin-right: 30px;
+   
+}
+
+nav ul li{
+    display: inline;
+    line-height: 90px;
+    letter-spacing: 4px;
+    margin-inline-start: 22px;
+
+  }
+  
+  nav ul li a{
+      color:#ffff;
+      text-transform:uppercase;
+      border-radius: 4px;
+
+  }
+.burger{
+    margin-left: auto;
+    margin-top: 30px;
+    display: none;
+    
+  }
+.burger div{
+      width: 25px;
+      height: 3px;
+      margin: 5px;
+      background-color:white;
+      display: none;
+              
+  }
+  
+
+a.active, a:hover{
+    color: palevioletred;
+    
+}
+
+
+@media screen and (max-width:1024){
+        .nav-links {
+            width: 60%;
+        }
+}
+
+@media screen and (max-width:768px){
+    .burger{
+        display: block;
+    }
+    .burger div{
+        display: block;
+    }
+    body{
+        overflow-x: hidden;
+
+    }
+    
+    .nav-links {
+        background-color:rgb(0, 0, 10);
+        display: block;
+        text-align: center;
+        position: absolute;
+        right: 0 px;
+        height: 92vh;
+        top: 8vh;
+        width: 50%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+
+.nav-links li{
+    display: block;
+    align-items: center;
+    flex-direction: column;
+    background-color:rgb(0, 0, 10);
+        
+}
+
+}
+.nav-active{
+    transform: translateX(0%);
+}
+
+@keyframes navLinkFade{
+    from{
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+
+    }
+    
+}
